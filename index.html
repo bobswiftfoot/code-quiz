@@ -10,6 +10,43 @@
 </head>
 
 <body>
+    <header>
+        <!--TODO: Change this to go to highscore.html-->
+        <a href="/">View High Scores</a>
+        <p>Timer: <span class="timerSpan">0</span></p>
+    </header>
+    <section class="startScreen" id="startScreen">
+        <h1>Coding Quiz Challange</h1>
+        <p>Try to answer the following code-related questions within the time limit.</p>
+        <p>Keep in mind that incorrect answers will penalize your score/time by 10 seconds</p>
+        <button id="startQuiz">Start Quiz</button>
+    </section>
+    <section class="questionScreen" id="questionsScreen">
+        <h1 class="question">Sample Question to fill out and test the html formating</h1>
+        <div class="buttonWrapper">
+            <button id="answer1">Answer 1</button>
+        </div>
+        <div class="buttonWrapper">
+            <button id="answer2">Answer 2</button>
+        </div>
+        <div class="buttonWrapper">
+            <button id="answer3">Answer 3</button>
+        </div>
+        <div class="buttonWrapper">
+            <button id="answer4">Answer 4</button>
+        </div>
+    </section>
+    <section class="resultsScreen" id="resultsScreen">
+        <h1>All Done!</h1>
+        <p>Your Final Score is <span class="scoreSpan">0</span></p>
+        <label for="initals">Enter Initals: </label>
+        <input type="text" name="initals" id="initals"/>
+        <button>Submit</button>
+    </section>
+    <section class="resultSection">
+        <p class="result"></p>
+    </section>
+
     <script src="./assets/js/script.js"></script>
 </body>
 
