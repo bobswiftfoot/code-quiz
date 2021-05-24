@@ -3,16 +3,56 @@ var startScreen = document.querySelector('#startScreen');
 var questionsScreen = document.querySelector('#questionsScreen');
 var resultsScreen = document.querySelector('#resultsScreen');
 
-function main()
+var questions = [   {q:"Question 1", a1:"Answer 1", a2:"Answer 2", a3:"Answer 3", a4:"Answer 4", a:0},  
+                    {q:"Question 2", a1:"Answer 1", a2:"Answer 2", a3:"Answer 3", a4:"Answer 4", a:2},  
+                    {q:"Question 3", a1:"Answer 1", a2:"Answer 2", a3:"Answer 3", a4:"Answer 4", a:1},  
+                    {q:"Question 4", a1:"Answer 1", a2:"Answer 2", a3:"Answer 3", a4:"Answer 4", a:1},  
+                    {q:"Question 5", a1:"Answer 1", a2:"Answer 2", a3:"Answer 3", a4:"Answer 4", a:3}];
+
+var currentQuestion = 0;
+var score = 0;
+
+function initilize()
 {
-    startButton.addEventListener('click', startGame);
+    startButton.addEventListener('click', displayQuestions);
+    questionsScreen.querySelector("#answer1").addEventListener('click', answerQuestion);
+    questionsScreen.querySelector("#answer2").addEventListener('click', answerQuestion);
+    questionsScreen.querySelector("#answer3").addEventListener('click', answerQuestion);
+    questionsScreen.querySelector("#answer4").addEventListener('click', answerQuestion);
 }
 
-function startGame()    
+function displayQuestions()
 {
-    //startScreen.setAttribute("style", "display:none");
-    //questionsScreen.setAttribute("style", "display:block");
-    //resultsScreen.setAttribute("style", "display:block");
+    var question = questions[currentQuestion];
+    questionsScreen.querySelector(".question").textContent = question.q;
+    questionsScreen.querySelector("#answer1").textContent = question.a1;
+    questionsScreen.querySelector("#answer2").textContent = question.a2;
+    questionsScreen.querySelector("#answer3").textContent = question.a3;
+    questionsScreen.querySelector("#answer4").textContent = question.a4;
+    startScreen.setAttribute("style", "display:none");
+    questionsScreen.setAttribute("style", "display:block");  
 }
 
-main();
+function answerQuestion()
+{
+    var correctAnswer = questions[currentQuestion].a;
+    var answer = this.id.replace("answer", "");
+    answer = parseInt(answer) - 1;
+    if(correctAnswer === answer)
+    {
+        score++;
+    }
+
+    currentQuestion++;
+    if(currentQuestion < questions.length)
+        displayQuestions();
+    else
+        displayResults();
+}
+
+function displayResults()
+{
+    
+}
+
+initilize();
