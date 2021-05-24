@@ -12,7 +12,7 @@
 <body>
     <header>
         <!--TODO: Change this to go to highscore.html-->
-        <a href="/">View High Scores</a>
+        <a href="./highscores.html">View High Scores</a>
         <p>Timer: <span class="timerSpan">0</span></p>
     </header>
     <section class="startScreen" id="startScreen">
@@ -41,11 +41,11 @@
         <p>Your Final Score is <span class="scoreSpan">0</span></p>
         <label for="initals">Enter Initals: </label>
         <input type="text" name="initals" id="initals"/>
-        <button>Submit</button>
+        <button id="resultSubmit">Submit</button>
     </section>
-    <section class="resultSection" id="resultSection">
+    <div class="resultSection" id="resultSection">
         <p class="result"></p>
-    </section>
+    </div>
 
     <script src="./assets/js/script.js"></script>
 </body>

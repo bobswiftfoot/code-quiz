@@ -23,7 +23,7 @@ header p
     margin: 10px;
 }
 
-.startScreen, .questionScreen, .resultsScreen
+section
 {
     margin: 100px;
     text-align: center;
