@@ -5,11 +5,11 @@ var resultsScreen = document.querySelector('#resultsScreen');
 var resultSection = document.querySelector('#resultSection');
 var timerSpan = document.querySelector('.timerSpan');
 
-var questions = [   {q:"Question 1", a1:"Answer 1", a2:"Answer 2", a3:"Answer 3", a4:"Answer 4", a:0},  
-                    {q:"Question 2", a1:"Answer 1", a2:"Answer 2", a3:"Answer 3", a4:"Answer 4", a:2},  
-                    {q:"Question 3", a1:"Answer 1", a2:"Answer 2", a3:"Answer 3", a4:"Answer 4", a:1},  
-                    {q:"Question 4", a1:"Answer 1", a2:"Answer 2", a3:"Answer 3", a4:"Answer 4", a:1},  
-                    {q:"Question 5", a1:"Answer 1", a2:"Answer 2", a3:"Answer 3", a4:"Answer 4", a:3}];
+var questions = [   {q:"Commonly used data types DO Not inclue:", a1:"strings", a2:"booleans", a3:"alerts", a4:"numbers", a:2},  
+                    {q:"The condition if an if / else statement is enclosed with ________.", a1:"quotes", a2:"curly brackets", a3:"parenthesis", a4:"square brackets", a:2},  
+                    {q:"Arrays in JavaScript can be used to store _______.", a1:"numbers and strings", a2:"other arrays", a3:"booleans", a4:"all of the above", a:3},  
+                    {q:"String values must be enlosed within _______ when being assigned to variables.", a1:"commas", a2:"curly brackets", a3:"quotes", a4:"parenthesis", a:2},  
+                    {q:"A very useful tool used during development and debugging for printing content to the debugger is:", a1:"JavaScript", a2:"terminal/bash", a3:"for loops", a4:"console.log", a:3}];
 
 var currentQuestion = 0;
 var score = 0;
