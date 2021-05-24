@@ -2,6 +2,7 @@ var startButton = document.querySelector('#startQuiz');
 var startScreen = document.querySelector('#startScreen');
 var questionsScreen = document.querySelector('#questionsScreen');
 var resultsScreen = document.querySelector('#resultsScreen');
+var resultSection = document.querySelector('#resultSection');
 
 var questions = [   {q:"Question 1", a1:"Answer 1", a2:"Answer 2", a3:"Answer 3", a4:"Answer 4", a:0},  
                     {q:"Question 2", a1:"Answer 1", a2:"Answer 2", a3:"Answer 3", a4:"Answer 4", a:2},  
@@ -38,10 +39,15 @@ function answerQuestion()
     var correctAnswer = questions[currentQuestion].a;
     var answer = this.id.replace("answer", "");
     answer = parseInt(answer) - 1;
+    resultSection.setAttribute("style", "display:block");  
     if(correctAnswer === answer)
     {
         score++;
+        resultSection.querySelector("p").textContent = "Correct";
     }
+    else
+        resultSection.querySelector("p").textContent = "Wrong";
+
 
     currentQuestion++;
     if(currentQuestion < questions.length)
@@ -52,7 +58,10 @@ function answerQuestion()
 
 function displayResults()
 {
-    
+    questionsScreen.setAttribute("style", "display:none");
+    resultsScreen.setAttribute("style", "display:block");  
+
+    resultsScreen.querySelector("span").textContent = score;
 }
 
 initilize();
