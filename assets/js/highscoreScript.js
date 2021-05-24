@@ -19,6 +19,9 @@ function loadScores()
         return;
     }
 
+    //Sort highscores by the Score value
+    highscores.sort((firstItem, secondItem) => secondItem.playerScore - firstItem.playerScore);
+
     for(var i = 0; i < highscores.length; i++)
     {
         var list = document.createElement("li");
