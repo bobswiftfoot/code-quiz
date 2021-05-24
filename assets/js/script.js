@@ -12,7 +12,7 @@ var questions = [   {q:"Commonly used data types DO Not inclue:", a1:"strings", 
                     {q:"A very useful tool used during development and debugging for printing content to the debugger is:", a1:"JavaScript", a2:"terminal/bash", a3:"for loops", a4:"console.log", a:3}];
 
 var currentQuestion = 0;
-var score = 0;
+var timeInterval = null;
 var timer = 60;
 
 function initilize()
@@ -29,14 +29,13 @@ function startGame()
 {
     timerSpan.textContent = timer;
 
-    var timeInterval = setInterval(function() 
+    timeInterval = setInterval(function() 
     {
         timerSpan.textContent = timer;
 
         if(!timer)
         {
             displayResults();
-            clearInterval(timeInterval);
             resultSection.setAttribute("style", "display:block");  
             resultSection.querySelector("p").textContent = "Times up!";
             return;
@@ -67,11 +66,14 @@ function answerQuestion()
     resultSection.setAttribute("style", "display:block");  
     if(correctAnswer === answer)
     {
-        score++;
         resultSection.querySelector("p").textContent = "Correct";
     }
     else
+    {
+        timer-=10;
+        timerSpan.textContent = timer;
         resultSection.querySelector("p").textContent = "Wrong";
+    }
 
 
     currentQuestion++;
@@ -83,10 +85,11 @@ function answerQuestion()
 
 function displayResults()
 {
+    clearInterval(timeInterval);
     questionsScreen.setAttribute("style", "display:none");
     resultsScreen.setAttribute("style", "display:block");  
 
-    resultsScreen.querySelector("span").textContent = score;
+    resultsScreen.querySelector("span").textContent = timer;
 }
 
 function submitScore()
@@ -100,7 +103,7 @@ function submitScore()
     highscores.push(
         {
             playerName:name,
-            playerScore:score,
+            playerScore:timer,
         });
 
     localStorage.setItem("highscores", JSON.stringify(highscores));

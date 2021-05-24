@@ -5,44 +5,16 @@
     box-sizing: border-box;
 }
 
-header
-{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-header a
-{
-    text-decoration: none;
-    margin: 10px;
-}
-
-header p
-{
-    margin: 10px;
-}
-
 section
 {
     margin: 100px;
     text-align: center;
 }
 
-h1
-{
-    font-size: 45px;
-}
-
 .startScreen p
 {
-    font-size: 30px;
+    font-size: 27px;
     margin: 10px 0;
-}
-
-.startScreen button
-{
-    font-size: 25px;
 }
 
 .questionScreen, .resultsScreen
@@ -50,26 +22,10 @@ h1
     display: none;
 }
 
-.buttonWrapper
-{
-    text-align: left;
-    margin: 25px 0;
-}
-
-.questionScreen button
-{
-    font-size: 25px;
-}
-
 .resultsScreen p
 {
     font-size: 30px;
     margin: 10px 0;
-}
-
-.resultsScreen button
-{
-    font-size: 25px;
 }
 
 .resultSection

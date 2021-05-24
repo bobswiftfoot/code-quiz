@@ -25,6 +25,7 @@ function loadScores()
     for(var i = 0; i < highscores.length; i++)
     {
         var list = document.createElement("li");
+        list.className = "list-group-item list-group-item-primary";
         var nameP = document.createElement("p");
         nameP.textContent = (i+1) + ". " + highscores[i].playerName + ": " + highscores[i].playerScore;
         list.appendChild(nameP);
@@ -49,6 +50,8 @@ function addEmptyChild()
     emptyChild= document.createElement("li");
     var nameP = document.createElement("p");
     nameP.textContent = "No current high scores";
+    emptyChild.className = "list-group-item list-group-item-primary";
+
     emptyChild.appendChild(nameP);
     document.querySelector(".highscoreList").appendChild(emptyChild);
 }
